@@ -4,10 +4,20 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from 'firebase/auth';
 import { getDatabase, ref, set, push, onValue } from 'firebase/database';
 
-// --- CONFIGURAÇÃO FIREBASE ---
-// Variáveis globais fornecidas pelo ambiente
-const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+// --- CONFIG FIREBASE FIXO (SEM JSON PARSE) ---
+const firebaseConfig = {
+    apiKey: "AIzaSyDI4Vt_wWDoorQjroBSMav-yCGlhtoiHjY",
+    authDomain: "doce-e-ser-de1f6.firebaseapp.com",
+    projectId: "doce-e-ser-de1f6",
+    storageBucket: "doce-e-ser-de1f6.firebasestorage.app",
+    messagingSenderId: "1021515521250",
+    appId: "1:1021515521250:web:c07acb32b18bec05d512bb",
+    measurementId: "G-5SBCEDZKR9",
+    databaseURL: "https://doce-e-ser-de1f6-default-rtdb.firebaseio.com"
+};
+
+// sem appId dinâmico
+const appId = "doce-e-ser";
 
 let db = null;
 let auth = null;
